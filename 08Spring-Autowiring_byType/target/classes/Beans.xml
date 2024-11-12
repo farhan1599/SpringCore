@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Autowiring "byType" :"IEngine"(interface) is the type of the variable 
+		in target bean -->
+
+	<!--There is an ambiguity for IOC as there are 2 implementation classes 
+		for IEngine(interface), IOC will confuse which implementation class object 
+		should be injected in target class variable -->
+
+	<!-- to resolve this ambiguity we need to give the priority to one bean 
+		using (primary="true") -->
+		
+	<bean id="de" class="demo.ioc.beans.DieselEng" />
+	<bean id="pe" class="demo.ioc.beans.PetrolEng" primary="true" />
+
+	<bean id="car" class="demo.ioc.beans.Car" autowire="byType" />
+
+
+
+
+</beans>

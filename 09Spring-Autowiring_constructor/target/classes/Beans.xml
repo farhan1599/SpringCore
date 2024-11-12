@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Autowiring using "constructor" : it internally uses "byType" to identify 
+      dependent objects -->
+      
+      <bean id ="pwd" class="demo.ioc.beans.PwdServiceImpl"/>
+      <bean id ="dao" class="demo.ioc.beans.UserDaoImpl"/>
+      <bean id ="email" class="demo.ioc.beans.EmailServiceImpl"/>
+      
+      <bean id="user" class="demo.ioc.beans.UserService" autowire="constructor"/>
+      
+</beans>

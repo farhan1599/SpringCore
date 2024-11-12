@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="credit" class="demo.ioc.beans.CreditCard" />
+	<bean id="debit" class="demo.ioc.beans.DebitCard" />
+	<bean id="upi" class="demo.ioc.beans.Upi" />
+
+
+
+	<bean id="creditRestaurant" class="demo.ioc.beans.Restaurant">
+		<constructor-arg name="payment" ref="credit" />
+	</bean>
+
+	<bean id="debitRestaurant" class="demo.ioc.beans.Restaurant">
+		<constructor-arg name="payment" ref="debit" />
+	</bean>
+
+	<bean id="upiRestaurant" class="demo.ioc.beans.Restaurant">
+		<constructor-arg name="payment" ref="upi" />
+	</bean>
+	
+</beans>

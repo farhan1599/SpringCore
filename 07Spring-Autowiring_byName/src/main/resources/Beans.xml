@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+
+
+	<!-- Autowiring byName :"printer" is the name of the variable in target bean -->
+
+	<bean id="sp" class="demo.ioc.beans.SonyPrinter" />
+	<bean id="printer" class="demo.ioc.beans.HPPrinter" />
+
+	<bean id="atm" class="demo.ioc.beans.Atm" autowire="byName" />
+
+
+</beans>
